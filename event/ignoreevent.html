@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'>
+	<title>ignoreevent</title>
+</head>
+<body>
+	<p><a id='link' href="http://www.naver.com">네이버</a>로 이동</p>
+	<script>
+		var link = document.getElementById("link");
+		//<a>의 클릭 시 href 링크로 이동하는 기능 삭제
+		link.onclick = function() {
+			return false;
+		}
+	</script>
+</body>
+</html>
