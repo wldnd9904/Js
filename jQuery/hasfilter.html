@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'>
+	<title>hasfilter</title>
+	<script src="jquery-3.6.0.js"></script>
+</head>
+<body>
+	<p>일반적인 문단입니다.</p>
+	<p>문단안에 <span>Span</span>이 있습니다.</p>
+	<p>ㅁㄴㅇㄹ</p>
+	<script>
+		//내용으로 span 태그를 가지는 태그 검색
+		$('p:has(span)').css('background','yellow');
+		//내용으로 ㅁㄴㅇㄹ텍스트를 가지는 태그 검색
+		$('p:contains(ㅁㄴㅇㄹ)').css('background','lime');
+	</script>
+</body>
+</html>
