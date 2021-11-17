@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'>
+	<title>parentuntil</title>
+	<script src="jquery-3.6.0.js"></script>
+</head>
+<body class="stop">
+	<div>
+		<p>문단 안에 <strong>강조</strong>표시가 있다.</p>
+	</div>
+	<hr />
+	<script>
+		//parentsUntil 메서드는 선택자로 지정한 엘리먼트를 만나기 전까지를 검색
+		var result = ".stop 이전까지의 조상: ";
+		$('strong').parentsUntil('.stop').each(function(index) {
+			result += this.tagName + " ";
+		});
+		document.write(result + "<br>");
+	</script>
+</body>
+</html>

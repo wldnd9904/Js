@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'>
+	<title>children</title>
+	<script src="jquery-3.6.0.js"></script>
+</head>
+<body>
+	<p>문단 안에 <strong>강조</strong>표시가 있다.</p>
+	<p>이 문단도 <span><strong>마찬가지</strong></span>이다.</p>
+	<div>디비전 안에 <strong>강조</strong> 표시가 있다.</div>
+	<p>이 문단은 내부에 글자가<!--주석--> <strong>무척</strong>이나 많은 아주 길다란 문단이다.</p>
+	<hr />
+	<script>
+		//children 메서드는 자식만 검색(손자x)
+		$('p').each(function(index) {
+			if ($(this).text().length < 20) {
+				$(this).children('strong').css('background','yellow');
+			}
+		})
+		//contents 메서드는 children처럼 바로 아래의 자식만 검색하되
+		//텍스트나 주석까지도 같이 검색한다.
+		//nodeType != 1 이면 엘리먼트가 아닌 노드들.
+		$('p').contents().filter(function() {
+			return this.nodeType != 1;
+		}).wrap('<b/>');
+		//parent 메서드는 바로 위의 부모 
+		var result = "부모: ";
+		result += $('strong').eq(0).parent().get(0).tagName;
+		document.write(result+"<br>");
+		//parents는 p -> body -> html (바깥으로 나가는 순)
+		result = "조상: ";
+		$('strong').eq(0).parents().each(function(index) {
+			result += this.tagName + " ";
+		});
+		document.write(result);
+	</script>
+</body>
+</html>
