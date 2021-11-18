@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'>
+	<title>addback</title>
+	<script src="jquery-3.6.0.js"></script> 
+</head>
+<body>
+	<p>문단1</p>
+	<p>문단2</p>
+	<p id="para3">문단3</p>
+	<p>문단4</p>
+	<p>문단5</p>
+	<script>
+		//문단3 선택 -> 문단4,문단5 선택 -> 문단3,문단4,문단5 선택
+		$('#para3').nextAll().addBack().css('background','yellow');
+	</script>
+</body>
+</html>
