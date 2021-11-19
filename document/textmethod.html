@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'>
+	<title>textmethod</title>
+	<script src="jquery-3.6.0.js"></script>
+</head>
+<body>
+	<p id="text">원래 내용입니다.</p>
+	<p id="html">원래 내용입니다.</p>
+	<p>문단1</p>
+	<p>문단2</p>
+	<p>문단3</p>
+
+	<script>
+		//text()는 내용 리턴, text(문자열)은 내용 변경
+		$('#text').text('내용을 변경한다.');
+		document.write('읽은 내용 : ' + $('#text').text() + "<br>");
+		//html()메서드는 태그도 인식한다.
+		$('#html').html('내용을 <b>변경</b>한다.');
+		document.write('읽은 내용 : ' + $('#html').html() + "<br>");
+		//text메서드가 여러 엘리먼트를 선택했다면 모두 추출
+		//html메서드는 첫 번째만 추출
+		document.write('$("p").html() : ' + $("p").html() + "<br>");
+		document.write('$("p").text() : ' + $("p").text() + "<br>");
+	</script>
+</body>
+</html>

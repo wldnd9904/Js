@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'>
+	<title>cssmethod</title>
+	<script src="jquery-3.6.0.js"></script>
+</head>
+<body>
+	<h1 id="css">문단1</h1>
+	<h1 id="css2" style="color:red;background-color:yellow;">문단2</h1>
+	<h1 id="css3">문단3</h1>
+	<hr>
+	<script>
+		//css(스타일명):스타일값 읽기
+		//css(스타일명,값):스타일값 변경
+		$("#css").css('color','Red');
+		document.write($("#css").css('color') + "<br>");
+		//css(스타일명 배열): 각각의 값을 배열로 리턴
+		var props = $('#css2').css(['color','backgroundColor']);
+		$.each(props, function(prop,value) {
+			document.write(prop + " : " + value + "<br>");
+		})
+		//css(스타일 객체) : 스타일 한번에 적용
+		$("#css3").css({
+			color:'Red',
+			backgroundColor:'Yellow',
+			border:'solid green',
+		});
+	</script>
+</body>
+</html>
