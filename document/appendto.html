@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'>
+	<title>appendto</title>
+	<script src="jquery-3.6.0.js"></script>
+	<style>
+		p {border:3px solid red;}
+		div {border:3px solid green;}
+	</style>
+</head>
+<body>
+	<script>
+		var para = $('<p>새문단입니다.</p>');
+		para.appendTo('body');
+		var para2 = $('<p></p>').html('새<b>문단</b>입니다.').css('color','blue');
+		para2.appendTo('body');
+		var para3 = $('<p>새문단입니다.</p>');
+		para3.prependTo('body');
+		var para4 = $('<p>개성공단입니다.</p>');
+		para2.after(para4);
+		//위 문단들을 다시 추가하거나 삽입하면 복사가 아닌 이동이 된다.
+		//clone으로 복제해야함
+		var para2_1 = para2.clone();
+		para4.after(para2_1);
+		//wrap으로 감싸기
+			//$('p').wrap("<div></div>")
+		//wrapAll로 싹다 한번에 감싸기
+		$('p').wrapAll("<div></div>")
+	</script>
+</body>
+</html>

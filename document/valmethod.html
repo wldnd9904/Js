@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'>
+	<title>valmethod</title>
+	<script src="jquery-3.6.0.js"></script>
+</head>
+<body>
+	<form>
+		<label for="user">이름</label>
+		<input type="text" id="user" value="홍길똥"><br>
+		<label for="male">남자</label>
+		<input type="checkbox" id="male" checked><br>
+		<label for="intro">소개</label>
+		<textarea id="intro" cols="40" rows="4">자기 소개</textarea><br>
+		<label for="work">직업</label>
+		<select id="work">
+			<option value="programmer">프로그래머</option>
+			<option value="progamer">프로게이머</option>
+			<option value="thief">도둑</option>
+		</select><br>
+		<button type="button" onclick="btnview();">조사하기</button>
+		<button type="button" onclick="btnchange();">이름 변경</button>
+	</form>
+		<hr>
+	<script>
+		//.val()로 값 읽어오기
+		function  btnview() {
+			alert("이름: "+$('#user').val() + "\n" +
+				"남자: "+$('#male:checked').val()+ "\n" +
+				"소개: "+$('#intro').val() + "\n" +
+				"직업: "+$('#work').val());
+		}
+		//변경도 가능
+		function btnchange() {
+			$('#user').val("홍길동");
+		}
+		//.position()으로 위치 읽어오기(오프셋 부모 기준)
+		var pos = $('#work').position();
+		document.write("#work 위치:"+pos.left + ", "+pos.top+"<br>");
+		//.offset()으로 위치 변경
+		var off = $('#work').offset();
+		off.left+=50;
+		off.top+=30;
+		$('#work').offset(off);
+		pos = $('#work').offset();
+		document.write("바뀐 위치:"+pos.left + ", "+pos.top+"<br>");
+
+	</script>
+</body>
+</html>

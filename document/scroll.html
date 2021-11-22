@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'>
+	<title>scroll</title>
+	<script src="jquery-3.6.0.js"></script>
+</head>
+<body>
+	<p>스크롤 위치 조사 및 변경</p>
+	<p><img src="sample.jpg" style="width:2000px"></p>
+	<script>
+		$('html').click(function() {
+			alert($(this).scrollLeft() + "," +$(this).scrollTop());
+		});
+		$('html').keydown(function() {
+			$('html').scrollTop(30);
+		});
+	</script>
+</body>
+</html>
