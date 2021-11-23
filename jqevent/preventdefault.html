@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'>
+	<title>preventdefault</title>
+	<script src="jquery-3.6.0.js"></script>
+</head>
+<body>
+	<p><a id="link" href="http://www.naver.com">네이버</a>로 이동</p>
+	<script>
+		//js style
+		//document.getElementById("link").onclick = function(){return false;}
+		$('#link').click(function(event) {
+			event.preventDefault();
+		});
+	</script>
+</body>
+</html>
