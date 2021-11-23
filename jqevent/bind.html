@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'>
+	<title>bind</title>
+	<script src="jquery-3.6.0.js"></script></head>
+<body>
+	<h1>제목입니다.</h1>
+	<h1>클릭하세요.</h1>
+	<h2>주사위</h2>
+	<h2>주사위</h2>
+	<h2>주사위</h2>
+	<h2>주사위</h2>
+	<h2>주사위</h2>
+	<h2>주사위</h2>
+	<h2>주사위</h2>
+	<h2>주사위</h2>
+	<h2>주사위</h2>
+	<script>
+		//사용자 정의 이벤트
+		//$('body').bind('click keydown', function() { alert("클릭했습니다."); });
+		$('h1').bind( {
+			click:function() {
+				$(this).text("클릭했습니다.");
+				$(this).unbind('click');
+			},
+			mouseenter:function() {$(this).css('background','red');},
+			mouseleave:function() {$(this).css('background','green');},
+		});
+		//일회용 핸들러
+		$('h2').one('click',function() {
+			$(this).text(Math.ceil(Math.random()*6));
+		});
+	</script>
+</body>
+</html>
